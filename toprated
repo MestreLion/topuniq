@@ -35,6 +35,8 @@ showperc=1
 showother=1
 totallast=0
 sortother=0
+stoptop=0
+stopcount=0
 enhance=0
 totallabel="Total (%d)"
 otherlabel="Other (%d)"
@@ -133,30 +135,34 @@ uniqopts=()
 for arg in "$@"; do [[ "$arg" == "-h" || "$arg" == "--help" ]] && usage ; done
 while (( $# )); do
 	case "$1" in
-	--min-count=*   ) mincount="${1#*=}"      ;;
-	--min-perc=*    ) minperc="${1#*=}"       ;;
-	--top=*         ) top="${1#*=}"           ;;
-	--top-perc=*    ) topperc="${1#*=}"       ;;
-	--precision=*   ) precision="${1#*=}"     ;;
-	--label-total=* ) totallabel="${1#*=}"    ;;
-	--label-other=* ) otherlabel="${1#*=}"    ;;
-	--min-count     ) shift ; mincount="$1"   ;;
-	--min-perc      ) shift ; minperc="$1"    ;;
-	--top           ) shift ; top="$1"        ;;
-	--top-perc      ) shift ; topperc="$1"    ;;
-	--precision     ) shift ; precision="$1"  ;;
-	--label-total   ) shift ; totallabel="$1" ;;
-	--label-other   ) shift ; otherlabel="$1" ;;
-	--no-total      ) showtotal=0             ;;
-	--no-perc       ) showperc=0              ;;
-	--no-other      ) showother=0             ;;
-	--total-last    ) totallast=1             ;;
-	--sort-other    ) sortother=1             ;;
-	--enhance-uniqc ) enhance=1               ;;
-	--debug         ) debug=1                 ;;
-	--              ) shift ; break           ;;
-	-*              ) uniqopts+=( "$1" )      ;;
-	*               ) files+=( "$1" )         ;;
+	--min-count=*        ) mincount="${1#*=}"      ;;
+	--min-perc=*         ) minperc="${1#*=}"       ;;
+	--top=*              ) top="${1#*=}"           ;;
+	--top-perc=*         ) topperc="${1#*=}"       ;;
+	--precision=*        ) precision="${1#*=}"     ;;
+	--label-total=*      ) totallabel="${1#*=}"    ;;
+	--label-other=*      ) otherlabel="${1#*=}"    ;;
+	--stop-after-top=*   ) stoptop="${1#*=}"       ;;
+	--stop-after-count=* ) stopcount="${1#*=}"     ;;
+	--min-count          ) shift ; mincount="$1"   ;;
+	--min-perc           ) shift ; minperc="$1"    ;;
+	--top                ) shift ; top="$1"        ;;
+	--top-perc           ) shift ; topperc="$1"    ;;
+	--precision          ) shift ; precision="$1"  ;;
+	--label-total        ) shift ; totallabel="$1" ;;
+	--label-other        ) shift ; otherlabel="$1" ;;
+	--stop-after-top     ) shift ; stoptop="$1"    ;;
+	--stop-after-count   ) shift ; stopcount="$1"  ;;
+	--no-total           ) showtotal=0             ;;
+	--no-perc            ) showperc=0              ;;
+	--no-other           ) showother=0             ;;
+	--total-last         ) totallast=1             ;;
+	--sort-other         ) sortother=1             ;;
+	--enhance-uniqc      ) enhance=1               ;;
+	--debug              ) debug=1                 ;;
+	--                   ) shift ; break           ;;
+	-*                   ) uniqopts+=( "$1" )      ;;
+	*                    ) files+=( "$1" )         ;;
 	esac
 	shift
 done
@@ -170,18 +176,17 @@ integer "$minperc"   "--min-perc"
 integer "$top"       "--top"
 integer "$topperc"   "--top-perc"
 integer "$precision" "--precision"
+integer "$stoptop"   "--stop-after-top"
+integer "$stopcount" "--stop-after-count"
 
 ((debug)) && { debugopts=(--lint --profile --dump-variables) ; awk=pgawk ; }
 
-if ((enhance)) ; then
-	cat
-else
-	sort "${files[@]}" | uniq -c "${uniqopts[@]}"
-fi |
+if ((enhance)); then cat; else sort "${files[@]}" | uniq -c "${uniqopts[@]}"; fi |
+if ((stoptop)); then head -n${stoptop}; else cat; fi |
 LC_ALL=C sort -nr |
 $awk -v showtotal=$showtotal -v showperc=$showperc -v showother=$showother \
      -v mincount=$mincount   -v minperc=$minperc   -v precision=$precision \
-     -v top=$top             -v topperc=$topperc                           \
+     -v top=$top             -v topperc=$topperc   -v stopcount=$stopcount \
      -v totallast=$totallast -v sortother=$sortother                       \
      -v otherlabel="$otherlabel" -v totallabel="$totallabel"               \
      -F ' ' --use-lc-numeric "${debugopts[@]}" '
@@ -201,6 +206,9 @@ BEGIN {
 
 	count["other"] = 0
 	lines["other"] = 0
+}
+$1 < stopcount {
+	exit
 }
 {
 	# FIRST PASS: calculate total
