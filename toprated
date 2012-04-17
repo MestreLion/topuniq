@@ -15,28 +15,38 @@
 #    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
-#    along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>
+#    along with this program. If not see <http://www.gnu.org/licenses/gpl.html>
 #
 # Think of it as a sort | uniq -c | sort -rn on steroids ;)
 #
-# TODO: allow <total> to be printed as last line instead of first
-# TODO: allow <other> to be printed in its list position instead of last
+# TODO: implement the already documented --stop-after-* options
+# TODO: explain locale role in sort, uniq and percentage formatting
+# TODO: provide useful examples of input data commands
+# TODO: test until it cracks, specially newly added options
 
 #Defauls:
 mincount=0
 minperc=0
+top=0
+topperc=100
+precision=0
 showtotal=1
 showperc=1
 showother=1
-precision=0
-totallabel="Total"
-otherlabel="Other"
+totallast=0
+sortother=0
+enhance=0
+totallabel="Total (%d)"
+otherlabel="Other (%d)"
+debug=0
+awk=awk
+debugops=()
 
-fatal()   { [[ "$1" ]] && echo "$myname: error: $1" >&2 ; exit ${2:-1} ; }
 argerr()  { echo "$myname: ${1:-error}" >&2 ; usage 1 ; }
 invalid() { argerr "invalid option: $1" ; }
 missing() { argerr "missing ${2:+$2 }operand${1:+ from $1}." ; }
-integer() { [[ "$1" != *[!0-9]* ]] || argerr "'$1'${2:+ in $2} is not an integer." ; }
+integer() { [[ "$1" ]] || missing "$2" "${3-NUM}" ; [[ "$1" != *[!0-9]* ]] ||
+            argerr "'$1'${2:+ in $2} is not an integer." ; }
 
 usage() {
 	cat <<- USAGE
@@ -56,15 +66,29 @@ usage() {
 	If FILE is not given, read from standard input. For numeric input
 	options, NUM must be a positive integer (digits only). All options
 	requiring arguments accept both --option=ARG or --option ARG forms
+	Options not listed here, if any, are appended to uniq -c
 
 	Options:
 	  -h|--help            show this page.
 
 	  --min-count=NUM      only print lines with count >= NUM
 	  --min-perc=NUM       only print lines with count percent >= NUM%
+	  --top=NUM            only print the top NUM lines. (0 = all lines)
+	  --top-perc=NUM       only print the top NUM% lines
 
 	  All lines with count less than any of the above options will be
-	  grouped together as a single <other> line, printed last by default
+	  grouped together as a single <other> line, printed last by default.
+	  Setting a minimum higher than total, either count or percentage,
+	  will effectively disable printing the <total> line. For --top-*
+	  options, NUM does not include the total.
+
+	  --stop-after-top=NUM   stop reading after NUM top unique lines
+	  --stop-after-count=NUM stop reading after lines with count < NUM
+
+	  Unlike --min-* and --top-* options, the above will discard lines,
+	  thus affecting <total>, <other> and all percentages.
+	  --stop-after-top is equivalent to head -nNUM after sort -nr and
+	  before $myname's enhancements.
 
 	  --precision=NUM      use NUM decimal digits for the percentages,
 	                       default $precision
@@ -72,14 +96,19 @@ usage() {
 	  --label-total=LABEL  use LABEL for <total> line, default "$totallabel"
 	  --label-other=LABEL  use LABEL for <other> line, default "$otherlabel"
 
+	  For the --label-* options, optional "%d" prints the number of unique
+	  lines that <total> or <other> represents
+
 	  --no-perc            do not print percentages
 	  --no-total           do not print <total> line
 	  --no-other           do not print <other> line
 
-	  --total-last         print <total> line last instead of first *
-	  --sort-other         print <other> line in sorted position *
+	  --total-last         print <total> line last instead of first
+	  --sort-other         print <other> line in sorted position
 
-	  * (above options not yet implemented)
+	  --enhance-uniqc      consider input as already processed by
+	                       sort | uniq -c, skip it and process from there.
+	                       Useful for enhancing previously saved data
 
 	Examples:
 
@@ -89,10 +118,8 @@ usage() {
 	# Ignore lines with count < 10%
 	$myname --min-perc=10 --no-other
 
-	# Behaves (almost*) exactly like sort | uniq -c | sort -nr
+	# Behaves exactly like sort | uniq -c | sort -nr
 	$myname --no-total --no-perc
-
-	* (it still pads counts as if total was present)
 
 	Copyright (C) 2012 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
 	License: GPLv3 or later. See <http://www.gnu.org/licenses/gpl.html>
@@ -102,70 +129,177 @@ usage() {
 
 myname="${0##*/}"
 files=()
+uniqopts=()
 for arg in "$@"; do [[ "$arg" == "-h" || "$arg" == "--help" ]] && usage ; done
 while (( $# )); do
 	case "$1" in
-	--min-count=*   ) mincount="${1#*=}"             ;;
-	--min-perc=*    ) minperc="${1#*=}"              ;;
-	--precision=*   ) precision="${1#*=}"            ;;
-	--label-total=* ) totallabel="${1#*=}"           ;;
-	--label-other=* ) otherlabel="${1#*=}"           ;;
-	--min-count     ) shift ; mincount="$1"          ;;
-	--min-perc      ) shift ; minperc="$1"           ;;
-	--precision     ) shift ; precision="$1"         ;;
-	--label-total   ) shift ; totallabel="$1"        ;;
-	--label-other   ) shift ; otherlabel="$1"        ;;
-	--no-total      ) showtotal=0                    ;;
-	--no-perc       ) showperc=0                     ;;
-	--no-other      ) showother=0                    ;;
-	--              ) shift ; files=( "$@" ) ; break ;;
-	-*              ) invalid "$1"                   ;;
-	*               ) files+=( "$1" )                ;;
+	--min-count=*   ) mincount="${1#*=}"      ;;
+	--min-perc=*    ) minperc="${1#*=}"       ;;
+	--top=*         ) top="${1#*=}"           ;;
+	--top-perc=*    ) topperc="${1#*=}"       ;;
+	--precision=*   ) precision="${1#*=}"     ;;
+	--label-total=* ) totallabel="${1#*=}"    ;;
+	--label-other=* ) otherlabel="${1#*=}"    ;;
+	--min-count     ) shift ; mincount="$1"   ;;
+	--min-perc      ) shift ; minperc="$1"    ;;
+	--top           ) shift ; top="$1"        ;;
+	--top-perc      ) shift ; topperc="$1"    ;;
+	--precision     ) shift ; precision="$1"  ;;
+	--label-total   ) shift ; totallabel="$1" ;;
+	--label-other   ) shift ; otherlabel="$1" ;;
+	--no-total      ) showtotal=0             ;;
+	--no-perc       ) showperc=0              ;;
+	--no-other      ) showother=0             ;;
+	--total-last    ) totallast=1             ;;
+	--sort-other    ) sortother=1             ;;
+	--enhance-uniqc ) enhance=1               ;;
+	--debug         ) debug=1                 ;;
+	--              ) shift ; break           ;;
+	-*              ) uniqopts+=( "$1" )      ;;
+	*               ) files+=( "$1" )         ;;
 	esac
 	shift
 done
+files+=( "$@" )
 
 [[ "$totallabel" ]] || missing "--label-total" "LABEL"
 [[ "$otherlabel" ]] || missing "--label-other" "LABEL"
-[[ "$mincount"   ]] || missing "--min-count"   "NUM"
-[[ "$minperc"    ]] || missing "--min-perc"    "NUM"
-[[ "$precision"  ]] || missing "--precision"   "NUM"
 
 integer "$mincount"  "--min-count"
 integer "$minperc"   "--min-perc"
+integer "$top"       "--top"
+integer "$topperc"   "--top-perc"
 integer "$precision" "--precision"
 
-sort "${files[@]}" | uniq -c |
-awk -F' ' -v label="$totallabel" '
-	    {total+=$1; print}
-	END {print " ", total, label}' |
-sort -nr |
-awk -v showtotal=$showtotal -v showperc=$showperc -v showother=$showother \
-	-v mincount=$mincount -v minperc=$minperc \
-	-v precision=$precision -v label="$otherlabel" -F ' ' --posix '
-	function printitem(count, perc, item) {
-		printf("%*d %*.*f%% %s\n",cpad,count,ppad,prescision,perc,item)
+((debug)) && { debugopts=(--lint --profile --dump-variables) ; awk=pgawk ; }
+
+if ((enhance)) ; then
+	cat
+else
+	sort "${files[@]}" | uniq -c "${uniqopts[@]}"
+fi |
+LC_ALL=C sort -nr |
+$awk -v showtotal=$showtotal -v showperc=$showperc -v showother=$showother \
+     -v mincount=$mincount   -v minperc=$minperc   -v precision=$precision \
+     -v top=$top             -v topperc=$topperc                           \
+     -v totallast=$totallast -v sortother=$sortother                       \
+     -v otherlabel="$otherlabel" -v totallabel="$totallabel"               \
+     -F ' ' --use-lc-numeric "${debugopts[@]}" '
+function printline(item) {
+	if (showperc)
+		printf("%*d %*.*f%% %s\n", cpad, count[item],
+		        ppad, precision, percs[item], label[item])
+	else
+		printf("%*d %s\n", cpad, count[item], label[item])
+}
+BEGIN {
+	items = 0
+
+	count["total"] = 0
+	percs["total"] = 100
+	lines["total"] = 0
+
+	count["other"] = 0
+	lines["other"] = 0
+}
+{
+	# FIRST PASS: calculate total
+
+	count["total"] += $1
+	lines["total"]++
+
+	# Filter on counter. Not needed here, but it keeps arrays small
+	if ((!top || (items < top)) && ($1 >= mincount))  {
+		count[items] = $1
+		label[items] = gensub("[[:blank:]]+" $1 "[[:blank:]]","",1)
+		items++
 	}
-	BEGIN {
-		ppad = 3
-		if (precision > 0) ppad += precision+1
+	else {
+		count["other"] += $1
+		lines["other"]++
 	}
-	FNR==1 {
-		total = $1
-		cpad = length($1)+2
-	}
-	{
-		perc = 100*$1/total
-		abovemin = (perc >= minperc + 0) && ($1 >= mincount + 0)
-		if (abovemin && (FNR>1 || showtotal))
-			printitem($1,perc,$2)
-		if (!abovemin && showother && FNR>1)
-			other += $1
-	}
-	END {
-		if (other > 0) {
-			perc = 100*other/total
-			printitem(other,perc,label)
+}
+END {
+	# Do some <total> handling
+	if (count["total"] > 0)
+		if ((count["total"] < mincount) || (percs["total"] < minperc))
+			showtotal = 0
+		else
+			label["total"] = sprintf(totallabel, lines["total"])
+	else
+		exit
+
+	# SECOND PASS: calculate percentages and <other>
+
+	topitems = items * 100 / topperc # trim based on topperc
+	for (i=0; i < topitems; i++) {
+		percent = count[i] * 100 / count["total"]
+		if (percent >= minperc)
+			percs[i] = percent
+		else {
+			topitems = i # trim again based on minperc
+			break
 		}
 	}
+	# Put remaining items in <other>
+	for (; i<items; i++) {
+		count["other"] += count[i]
+		lines["other"]++
+	}
+	if (count["other"] > 0) {
+		percs["other"] = count["other"] * 100 / count["total"]
+		label["other"] = sprintf(otherlabel, lines["other"])
+	}
+	else
+		showother = 0
+
+	# Calculate max lengths (for paddings)
+	if (showtotal) {
+		# padding taken from <total>
+		maxcount = count["total"]
+		maxpercs = percs["total"] # == 100, duh
+	}
+	else {
+		if (showother && (count["other"] > count[0])) {
+			# padding taken from <oher>
+			maxcount = count["other"]
+			maxpercs = percs["other"]
+		}
+		else {
+			# padding taken from top line
+			maxcount = count[0]
+			maxpercs = percs[0]
+		}
+	}
+
+	# percentage padding
+	ppad = length(maxpercs "")
+	if (precision > 0) ppad += precision+1 # account for decimal separator
+
+	# count padding
+	mincpad = 7 # seems to be uniq -c hardcoded min padding
+	if (length(maxcount "") < mincpad)
+		cpad = mincpad
+	else
+		cpad = length(maxcount "")
+
+	# THIRD PASS: print results
+
+	if (showtotal && !totallast) {
+		printline("total")
+		showtotal = 0
+	}
+
+	for (i=0; i<topitems; i++) {
+		if (showother && sortother && (count["other"] > count[i])) {
+			printline("other")
+			showother = 0
+		}
+		if ((count[i] >= mincount) && (percs[i] >= minperc))
+			printline(i)
+	}
+
+	if (showother) printline("other")
+	if (showtotal) printline("total")
+}
 '
