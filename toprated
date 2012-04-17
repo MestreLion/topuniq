@@ -63,7 +63,7 @@ usage() {
 	cat <<-USAGE
 
 	Sort input by count, printing totals and percentages. Think of it as
-	sort | uniq -c | sort -rn on steroids.
+	sort | uniq -c | sort -nr on steroids.
 
 	If FILE is not given, read from standard input. For numeric input
 	options, NUM must be a positive integer (digits only). All options
@@ -71,12 +71,12 @@ usage() {
 	Options not listed here, if any, are appended to uniq -c
 
 	Options:
-	  -h|--help            show this page.
+	  -h|--help              show this page.
 
-	  --min-count=NUM      only print lines with count >= NUM
-	  --min-perc=NUM       only print lines with count percent >= NUM%
-	  --top=NUM            only print the top NUM lines. (0 = all lines)
-	  --top-perc=NUM       only print the top NUM% lines
+	  --min-count=NUM        only print lines with count >= NUM
+	  --min-perc=NUM         only print lines with count percent >= NUM%
+	  --top=NUM              only print the top NUM lines. 0 = all lines
+	  --top-perc=NUM         only print the top NUM% lines
 
 	  All lines with count less than any of the above options will be
 	  grouped together as a single <other> line, printed last by default.
@@ -89,39 +89,63 @@ usage() {
 
 	  Unlike --min-* and --top-* options, the above will discard lines,
 	  thus affecting <total>, <other> and all percentages.
-	  --stop-after-top is equivalent to head -nNUM after sort -nr and
-	  before $myname's enhancements.
+	  --stop-after-top is equivalent to 'head -nNUM' after sort -nr and
+	  before $myname's enhancements. For both, NUM=0 disables the option
 
-	  --precision=NUM      use NUM decimal digits for the percentages,
-	                       default $precision
+	  --precision=NUM        use NUM decimal digits for the percentages,
+	                         default $precision
 
-	  --label-total=LABEL  use LABEL for <total> line, default "$totallabel"
-	  --label-other=LABEL  use LABEL for <other> line, default "$otherlabel"
+	  --no-perc              do not print percentages
+	  --no-total             do not print <total> line
+	  --no-other             do not print <other> line
+
+	  --total-last           print <total> line last instead of first
+	  --sort-other           print <other> line in sorted position
+
+	  --label-total=LABEL use LABEL for <total> line, default "$totallabel"
+	  --label-other=LABEL use LABEL for <other> line, default "$otherlabel"
 
 	  For the --label-* options, optional "%d" prints the number of unique
 	  lines that <total> or <other> represents
-
-	  --no-perc            do not print percentages
-	  --no-total           do not print <total> line
-	  --no-other           do not print <other> line
-
-	  --total-last         print <total> line last instead of first
-	  --sort-other         print <other> line in sorted position
 
 	  --enhance-uniqc      consider input as already processed by
 	                       sort | uniq -c, skip it and process from there.
 	                       Useful for enhancing previously saved data
 
+
+	Environment Variables:
+
+	  $myname uses sort and uniq, so the user locale, particularly
+	  LC_COLLATE, affects ordering and unique matching, as well as sort
+	  performance. LC_NUMERIC affects decimal separator when printing
+	  percentages. Use LC_ALL=C for fastest (but locale-independent)
+	  results.
+
+
 	Examples:
 
-	# Group all lines with count = 1 as "Other"
-	$myname --min-count=2
+	# Ignore lines with count < 10%, using case-insensitive uniqueness
+	$myname --min-perc=10 --no-other --ignore-case
 
-	# Ignore lines with count < 10%
-	$myname --min-perc=10 --no-other
+	# Top 20, sorting <others> within the list, and customizing its label
+	$myname --top=20 --sort-other --label-other="Other %d unique lines"
+
+	# Enhance an existing input, discarding lines with count < 10
+	$myname my_uniq_data.txt --enhance-uniq --stop-after-count=10
 
 	# Behaves exactly like sort | uniq -c | sort -nr
 	$myname --no-total --no-perc
+
+	For input data, some examples you may pipe directly to $myname:
+
+	# Words in Bash's manual page
+	man bash | tr '[:punct:][:blank:]' '\n' | sed '/^$/d'
+
+	# Icon types in /usr/share/icons
+	find /usr/share/icons -type f -name "*.*" | awk -F. '{print $NF}'
+
+	# Shebangs from /usr/bin scripts
+	for f in /usr/bin/*; do [ -f "$f" ] && head -n1 "$f" | grep ^#!; done
 
 	Copyright (C) 2012 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
 	License: GPLv3 or later. See <http://www.gnu.org/licenses/gpl.html>
