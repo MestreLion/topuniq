@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# toprated - sort input by count, showing totals and percentages
+# toprated - sort input by unique count, printing total and percentages
 #
 #    Copyright (C) 2012 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
 #
@@ -17,19 +17,14 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program. If not see <http://www.gnu.org/licenses/gpl.html>
 #
-# Think of it as a sort | uniq -c | sort -rn on steroids ;)
-#
-# TODO: implement the already documented --stop-after-* options
-# TODO: explain locale role in sort, uniq and percentage formatting
-# TODO: provide useful examples of input data commands
-# TODO: test until it cracks, specially newly added options
+# Think of it as a sort | uniq -c | sort -nr on steroids ;)
 
 #Defauls:
 mincount=0
 minperc=0
 top=0
 topperc=100
-precision=0
+precision=1
 showtotal=1
 showperc=1
 showother=1
@@ -108,7 +103,7 @@ usage() {
 	  For the --label-* options, optional "%d" prints the number of unique
 	  lines that <total> or <other> represents
 
-	  --enhance-uniqc      consider input as already processed by
+	  --enhance-uniq       consider input as already processed by
 	                       sort | uniq -c, skip it and process from there.
 	                       Useful for enhancing previously saved data
 
@@ -124,7 +119,7 @@ usage() {
 
 	Examples:
 
-	# Ignore lines with count < 10%, using case-insensitive uniqueness
+	# Ignore lines with count < 10%, using case-insensitive uniq
 	$myname --min-perc=10 --no-other --ignore-case
 
 	# Top 20, sorting <others> within the list, and customizing its label
@@ -182,7 +177,7 @@ while (( $# )); do
 	--no-other           ) showother=0             ;;
 	--total-last         ) totallast=1             ;;
 	--sort-other         ) sortother=1             ;;
-	--enhance-uniqc      ) enhance=1               ;;
+	--enhance-uniq       ) enhance=1               ;;
 	--debug              ) debug=1                 ;;
 	--                   ) shift ; break           ;;
 	-*                   ) uniqopts+=( "$1" )      ;;
@@ -190,6 +185,14 @@ while (( $# )); do
 	esac
 	shift
 done
+
+((debug)) && {
+	debugopts=(--lint --profile --dump-variables)
+	awk=pgawk
+	exec 2>"$myname.log"
+	set -x
+}
+
 files+=( "$@" )
 
 [[ "$totallabel" ]] || missing "--label-total" "LABEL"
@@ -202,8 +205,6 @@ integer "$topperc"   "--top-perc"
 integer "$precision" "--precision"
 integer "$stoptop"   "--stop-after-top"
 integer "$stopcount" "--stop-after-count"
-
-((debug)) && { debugopts=(--lint --profile --dump-variables) ; awk=pgawk ; }
 
 if ((enhance)); then cat; else sort "${files[@]}" | uniq -c "${uniqopts[@]}"; fi |
 if ((stoptop)); then head -n${stoptop}; else cat; fi |
