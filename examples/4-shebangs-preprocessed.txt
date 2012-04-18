@@ -1,0 +1,53 @@
+    328 #!/bin/sh
+    146 #!/usr/bin/perl -w
+    145 #!/usr/bin/python
+    141 #!/usr/bin/perl
+     90 #! /bin/sh
+     80 #!/bin/bash
+     42 #!/usr/bin/env python
+     39 #! /usr/bin/perl -w
+     25 #! /usr/bin/python
+     21 #! /usr/bin/perl
+     21 #! /bin/bash
+     20 #!/bin/sh -e
+     14 #! /usr/bin/env perl
+     11 #!/usr/bin/env perl
+     11 #! /usr/bin/python2.6
+     11 #! /bin/bash -e
+     10 #!/usr/bin/ruby1.8
+      8 #!/usr/bin/python -u
+      8 #! /usr/bin/python3.1
+      7 #!/bin/bash -e
+      5 #! /usr/bin/python3
+      4 #! /bin/sh -e
+      3 #!/usr/bin/python2.6
+      3 #!/usr/bin/fontforge -lang=ff
+      3 #!/usr/bin/env ruby
+      3 #!/bin/sh -
+      2 #!/usr/bin/wish8.5
+      2 #!/usr/bin/perl -w
+      2 #!/usr/bin/perl
+      2 #!/usr/bin/env texlua
+      2 #!/usr/bin/env python2.6
+      2 #!/usr/bin/env bash
+      2 #!/bin/sh
+      2 #! /usr/bin/env python
+      2 #! /bin/sh -f
+      2 #! /bin/sh -
+      1 #!/usr/bin/ruby -w
+      1 #!/usr/bin/python2.6 -tt
+      1 #!/usr/bin/python -tt
+      1 #!/usr/bin/perl -wl
+      1 #!/usr/bin/perl -w -pi.old
+      1 #!/usr/bin/perl -- # -*- Perl -*-
+      1 #!/usr/bin/gawk -f
+      1 #!/usr/bin/festival --script
+      1 #!/usr/bin/env nickle
+      1 #!/bin/sh -f
+      1 #!/bin/sh -eu
+      1 #!/bin/sh --
+      1 #!/bin/sh --
+      1 #!/bin/bash -x
+      1 #! /usr/bin/python2.6 -OOt
+      1 #! /usr/bin/python -OOt
+      1 #! /usr/bin/perl

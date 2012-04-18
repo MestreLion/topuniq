@@ -1,0 +1,1236 @@
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl
+#! /usr/bin/env perl
+#! /bin/sh
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/env perl
+#! /usr/bin/env perl
+#! /bin/bash
+#!/bin/sh
+#! /bin/bash -e
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/env perl
+#!/usr/bin/perl
+#! /usr/bin/python
+#! /usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/bash
+#!/bin/sh -e
+#!/bin/bash
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/env python
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash
+#! /bin/sh
+#!/bin/bash
+#!/usr/bin/env perl
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/python
+#!/usr/bin/python
+#! /usr/bin/perl -w
+#! /bin/sh
+#! /bin/sh
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#! /bin/sh
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl
+#! /usr/bin/env python
+#!/usr/bin/perl -wl
+#!/usr/bin/python -u
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/perl
+#! /bin/bash -e
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#! /usr/bin/env perl
+#! /usr/bin/perl -w
+#! /usr/bin/python3.1
+#!/bin/sh
+#!/usr/bin/python
+#! /usr/bin/env perl
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl
+#! /usr/bin/python
+#!/usr/bin/env python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/python
+#! /usr/bin/perl
+#! /usr/bin/env perl
+#!/bin/sh
+#!/usr/bin/env python
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#! /bin/sh
+#! /usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#! /bin/bash
+#! /usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/env python
+#!/usr/bin/python
+#!/bin/sh -e
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/perl
+#! /bin/sh -
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/ruby1.8
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/wish8.5
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#! /usr/bin/python
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash -e
+#! /usr/bin/python3.1
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#! /bin/bash
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/python -OOt
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/python -u
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/bash
+#! /bin/sh
+#! /bin/sh
+#! /usr/bin/python
+#!/bin/bash
+#! /usr/bin/env perl
+#!/bin/bash
+#! /bin/sh
+#!/usr/bin/perl
+#!/bin/bash
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/ruby1.8
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/bin/sh -e
+#! /bin/sh -f
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh -e
+#!/usr/bin/perl
+#! /usr/bin/python3
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/env perl
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl
+#! /bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#! /bin/bash
+#!/usr/bin/env perl
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh -e
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/env python
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh -e
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/perl
+#! /usr/bin/python3.1
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#! /bin/sh
+#! /bin/bash -e
+#!/bin/sh
+#! /usr/bin/python3
+#! /bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/bin/bash
+#! /usr/bin/perl
+#!/usr/bin/perl -w -pi.old
+#! /usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh --
+#!/bin/sh
+#!/usr/bin/ruby1.8
+#!/bin/sh
+#!/bin/bash
+#! /bin/sh
+#! /usr/bin/python
+#! /bin/sh
+#! /usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh -e
+#!/usr/bin/python
+#!/bin/sh
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/ruby1.8
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/fontforge -lang=ff
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#! /usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/bash
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/env texlua
+#!/usr/bin/env ruby
+#! /bin/sh
+#!/bin/bash
+#!/usr/bin/perl
+#! /usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/python -tt
+#!/bin/sh -e
+#! /bin/sh -e
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/bin/sh --
+#!/usr/bin/festival --script
+#! /usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/env ruby
+#!/usr/bin/ruby1.8
+#!/usr/bin/perl -w
+#! /usr/bin/python2.6
+#!/usr/bin/perl -w
+#!/usr/bin/env perl
+#!/bin/sh
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/perl
+#! /usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/bash -e
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl -w
+#! /bin/bash
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/env python
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#! /bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl
+#! /bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#! /bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/env python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/env python
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl
+#! /bin/sh
+#!/bin/sh
+#!/bin/bash
+#! /bin/sh
+#! /usr/bin/perl -w
+#!/bin/bash
+#!/bin/sh
+#! /bin/bash
+#!/bin/sh
+#! /usr/bin/python3.1
+#!/usr/bin/python
+#! /usr/bin/perl -w
+#!/bin/bash
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/env python
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh -e
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/bash
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#! /bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/env python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python -u
+#!/usr/bin/perl -w
+#!/usr/bin/python -u
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#! /usr/bin/perl
+#!/bin/sh -eu
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/env python
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh -e
+#!/usr/bin/perl -w
+#! /usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/env python
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/ruby1.8
+#! /bin/bash -e
+#!/usr/bin/python
+#! /bin/sh
+#!/bin/bash
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/env python
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#! /bin/sh
+#! /usr/bin/perl
+#! /bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/python2.6
+#!/usr/bin/env python2.6
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/bin/sh
+#! /bin/sh
+#! /usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#! /bin/sh
+#!/usr/bin/python
+#!/bin/sh -e
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/env python
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/python -u
+#!/usr/bin/python
+#!/usr/bin/python
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/ruby1.8
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/python
+#!/bin/bash
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/env perl
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh -e
+#!/usr/bin/fontforge -lang=ff
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/usr/bin/python -u
+#!/bin/sh
+#!/usr/bin/env python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#! /usr/bin/python2.6
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#! /bin/sh
+#! /bin/sh
+#! /usr/bin/python
+#!/usr/bin/env bash
+#!/usr/bin/env python
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/perl
+#!/usr/bin/env python
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/ruby1.8
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python2.6
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/wish8.5
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/env ruby
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/python
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#!/usr/bin/perl
+#! /bin/bash
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#! /bin/bash -e
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /bin/bash -e
+#!/usr/bin/python
+#!/usr/bin/python
+#!/bin/bash
+#! /bin/sh
+#! /usr/bin/python
+#! /bin/bash
+#!/usr/bin/env perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /usr/bin/python2.6
+#!/bin/bash -e
+#! /bin/bash -e
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/bash -e
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/sh -e
+#!/usr/bin/env python
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#! /usr/bin/python2.6
+#! /usr/bin/python2.6
+#! /bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /bin/sh
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/bash
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/bash -e
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#! /usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#! /usr/bin/python3.1
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/gawk -f
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#!/usr/bin/perl
+#!/bin/bash
+#! /usr/bin/python2.6
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/env perl
+#! /bin/sh -e
+#! /bin/sh
+#! /usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/usr/bin/perl
+#! /bin/sh
+#!/usr/bin/env python
+#!/usr/bin/ruby -w
+#!/usr/bin/env python
+#!/bin/bash -e
+#! /usr/bin/perl -w
+#! /bin/sh
+#! /bin/sh
+#! /usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl -- # -*- Perl -*-
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#! /bin/sh
+#!/usr/bin/perl -w
+#! /bin/sh
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/env python
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#! /usr/bin/python3.1
+#! /bin/sh -e
+#! /usr/bin/python2.6
+#! /usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#! /bin/bash -e
+#!/bin/bash
+#! /bin/bash
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /bin/sh
+#! /usr/bin/perl -w
+#! /bin/sh
+#!/usr/bin/python2.6
+#!/bin/bash -e
+#!/bin/bash
+#! /bin/sh
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/python
+#!/usr/bin/ruby1.8
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh -
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/bash
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /bin/sh
+#! /usr/bin/python3
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /usr/bin/perl -w
+#! /bin/sh
+#!/bin/sh
+#! /usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/env texlua
+#!/bin/sh
+#!/usr/bin/env nickle
+#!/bin/sh
+#!/bin/bash
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh -e
+#!/usr/bin/env python
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/usr/bin/env bash
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/bin/bash
+#! /bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#! /usr/bin/python
+#! /usr/bin/python2.6 -OOt
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/bin/sh
+#!/bin/bash
+#!/bin/sh
+#! /usr/bin/env perl
+#!/usr/bin/env python
+#!/usr/bin/python
+#! /usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/perl
+#!/bin/sh
+#! /usr/bin/perl
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#! /usr/bin/env python
+#!/bin/sh
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /usr/bin/python2.6
+#!/bin/bash
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#! /usr/bin/python2.6
+#!/bin/sh
+#!/bin/sh -f
+#! /bin/sh
+#!/bin/sh
+#!/bin/bash
+#!/bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/env perl
+#!/bin/sh
+#!/bin/sh -e
+#!/usr/bin/perl -w
+#! /bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#! /bin/sh
+#! /usr/bin/env perl
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /bin/sh -f
+#! /usr/bin/perl
+#!/usr/bin/env perl
+#!/usr/bin/python -u
+#!/bin/bash
+#! /usr/bin/python
+#! /bin/sh
+#!/usr/bin/perl -w
+#!/bin/bash
+#! /bin/sh
+#!/bin/sh -e
+#! /bin/sh
+#! /bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/env python
+#!/bin/sh
+#! /bin/sh
+#! /usr/bin/perl
+#!/bin/sh
+#! /usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /bin/sh
+#!/bin/sh
+#! /usr/bin/env perl
+#!/bin/bash
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/env python
+#!/bin/bash
+#! /usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/bash
+#! /bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#! /usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/usr/bin/env python
+#!/usr/bin/env python
+#!/bin/sh
+#!/usr/bin/perl
+#! /bin/bash
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#! /usr/bin/python2.6
+#!/bin/bash -x
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/perl
+#! /usr/bin/perl -w
+#! /bin/sh
+#! /bin/bash -e
+#!/usr/bin/python
+#!/usr/bin/env python
+#!/usr/bin/python
+#! /bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl
+#! /usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#! /bin/sh
+#!/bin/bash
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#! /usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#! /usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/env perl
+#!/usr/bin/env python
+#! /bin/bash
+#!/usr/bin/env python
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/bash
+#! /usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#! /bin/bash -e
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/bash
+#!/bin/sh -
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/env python
+#! /bin/sh
+#! /bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#! /bin/sh -
+#!/usr/bin/perl -w
+#! /usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#! /usr/bin/perl -w
+#!/bin/sh
+#! /usr/bin/perl -w
+#!/usr/bin/perl -w
+#! /usr/bin/python3.1
+#!/usr/bin/ruby1.8
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/env perl
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /bin/bash -e
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python2.6
+#!/usr/bin/perl
+#!/usr/bin/python2.6 -tt
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh -e
+#!/bin/sh
+#! /usr/bin/env perl
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#! /bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/python
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /usr/bin/python
+#!/usr/bin/python
+#!/usr/bin/python -u
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh -e
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/env perl
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#! /usr/bin/python3
+#! /usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/bin/bash
+#! /bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#! /usr/bin/python3
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/usr/bin/python
+#!/bin/bash
+#!/usr/bin/perl
+#! /bin/sh
+#! /usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh -
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#! /bin/sh
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/env python
+#!/usr/bin/env python2.6
+#!/usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/perl -w
+#!/usr/bin/perl
+#! /usr/bin/perl -w
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#! /usr/bin/python
+#! /bin/sh
+#!/usr/bin/perl
+#!/usr/bin/perl
+#!/usr/bin/env perl
+#! /usr/bin/perl -w
+#!/usr/bin/python
+#!/usr/bin/python
+#! /usr/bin/python
+#!/bin/sh -e
+#!/bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/python
+#! /bin/sh
+#!/usr/bin/perl -w
+#! /usr/bin/python
+#! /usr/bin/perl -w
+#! /bin/sh
+#! /bin/sh -e
+#!/usr/bin/env python
+#! /usr/bin/python3.1
+#!/usr/bin/python
+#!/usr/bin/perl
+#!/bin/sh
+#!/bin/sh
+#!/usr/bin/perl -w
+#!/bin/sh
+#! /bin/sh
+#!/bin/sh
+#!/bin/sh
+#! /bin/bash
+#! /usr/bin/python
+#! /bin/sh
+#!/usr/bin/perl
+#!/bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/bin/sh -e
+#!/usr/bin/perl
+#!/usr/bin/perl -w
+#!/bin/bash
+#!/bin/sh
+#!/usr/bin/env python
+#! /bin/sh
+#!/usr/bin/python
+#!/bin/sh
+#!/usr/bin/fontforge -lang=ff
