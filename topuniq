@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# toprated - sort input by unique count, printing total and percentages
+# topuniq - sort input by unique count, printing total and percentages
 #
 #    Copyright (C) 2012 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
 #
