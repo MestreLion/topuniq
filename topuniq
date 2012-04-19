@@ -137,7 +137,7 @@ usage() {
 	man bash | tr '[:punct:][:blank:]' '\n' | sed '/^$/d'
 
 	# Icon types in /usr/share/icons
-	find /usr/share/icons -type f -name "*.*" | awk -F. '{print $NF}'
+	find /usr/share/icons -type f -name "*.*" | awk -F. '{print \$NF}'
 
 	# Shebangs from /usr/bin scripts
 	for f in /usr/bin/*; do [ -f "$f" ] && head -n1 "$f" | grep ^#!; done
@@ -206,7 +206,11 @@ integer "$precision" "--precision"
 integer "$stoptop"   "--stop-after-top"
 integer "$stopcount" "--stop-after-count"
 
-if ((enhance)); then cat; else sort "${files[@]}" | uniq -c "${uniqopts[@]}"; fi |
+if ((enhance)); then
+	cat "${files[@]}"
+else
+	sort "${files[@]}" | uniq -c "${uniqopts[@]}"
+fi |
 if ((stoptop)); then head -n${stoptop}; else cat; fi |
 LC_ALL=C sort -nr |
 $awk -v showtotal=$showtotal -v showperc=$showperc -v showother=$showother \
