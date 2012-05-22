@@ -37,7 +37,8 @@ totallabel="Total (%d)"
 otherlabel="Other (%d)"
 debug=0
 awk=awk
-debugops=()
+debugops=(--lint --profile --dump-variables)
+gawkopts=(--use-lc-numeric)
 
 argerr()  { echo "$myname: ${1:-error}" >&2 ; usage 1 ; }
 invalid() { argerr "invalid option: $1" ; }
@@ -186,12 +187,16 @@ while (( $# )); do
 	shift
 done
 
-((debug)) && {
-	debugopts=(--lint --profile --dump-variables)
-	awk=pgawk
+if ((debug)) ; then
+	type pgawk >/dev/null 2>&1 && awk=pgawk
 	exec 2>"$myname.log"
 	set -x
-}
+else
+	debugopts=()
+fi
+
+# gawk test
+$awk "${gawkopts[@]}" 2>/dev/null || gawkopts=()
 
 files+=( "$@" )
 
@@ -218,7 +223,7 @@ $awk -v showtotal=$showtotal -v showperc=$showperc -v showother=$showother \
      -v top=$top             -v topperc=$topperc   -v stopcount=$stopcount \
      -v totallast=$totallast -v sortother=$sortother                       \
      -v otherlabel="$otherlabel" -v totallabel="$totallabel"               \
-     -F ' ' --use-lc-numeric "${debugopts[@]}" '
+     -F ' ' "${gawkopts[@]}" "${debugopts[@]}" '
 function printline(item) {
 	if (showperc)
 		printf("%*d %*.*f%% %s\n", cpad, count[item],
@@ -248,7 +253,8 @@ $1 < stopcount {
 	# Filter on counter. Not needed here, but it keeps arrays small
 	if ((!top || (items < top)) && ($1 >= mincount))  {
 		count[items] = $1
-		label[items] = gensub("[[:blank:]]+" $1 "[[:blank:]]","",1)
+		label[items] = $0
+		sub("[ ]+" $1 " ", "", label[items]) # label = $2 onwards
 		items++
 	}
 	else {
