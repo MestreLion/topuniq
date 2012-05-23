@@ -75,15 +75,18 @@ Reference:
 sort | uniq -c | sort -nr:                         real	0m10.042s
 
 Worst case scenario - no min-* or top-* filter
-topuniq                                            real	0m14.360s
+topuniq                                            real	0m14.360s (gawk)
+                                                   real	0m13.294s (mawk)
 
-Direct comparison - no-op same output
+Direct comparison - no-op same output as reference
 (no, I didn't optimize for that... yet ;)
-topuniq --no-total --no-perc                       real	0m14.201s
+topuniq --no-total --no-perc                       real	0m14.201s (gawk)
+                                                   real	0m13.252s (mawk)
 
 Best case scenario - using min-count > total
 (not cheating with --stop-after-*, of course)
-topuniq --min-count=3000                           real	0m11.797s
+topuniq --min-count=3000                           real	0m11.797s (gawk)
+                                                   real	0m11.739s (mawk)
 
 Not bad, not bad at all ;)
 ... and soon to be hugely improved.
