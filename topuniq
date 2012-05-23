@@ -37,7 +37,7 @@ totallabel="Total (%d)"
 otherlabel="Other (%d)"
 debug=0
 awk=awk
-debugops=(--lint --profile --dump-variables)
+debugopts=(--lint --profile --dump-variables)
 gawkopts=(--use-lc-numeric)
 
 argerr()  { echo "$myname: ${1:-error}" >&2 ; usage 1 ; }
@@ -188,9 +188,13 @@ while (( $# )); do
 done
 
 if ((debug)) ; then
-	type pgawk >/dev/null 2>&1 && awk=pgawk
 	exec 2>"$myname.log"
 	set -x
+	if type pgawk >/dev/null 2>&1 ; then
+		awk=pgawk
+	else
+		debugopts=()
+	fi
 else
 	debugopts=()
 fi
