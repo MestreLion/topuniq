@@ -43,8 +43,11 @@ gawkopts=(--use-lc-numeric)
 argerr()  { echo "$myname: ${1:-error}" >&2 ; usage 1 ; }
 invalid() { argerr "invalid option: $1" ; }
 missing() { argerr "missing ${2:+$2 }operand${1:+ from $1}." ; }
-integer() { [[ "$1" ]] || missing "$2" "${3-NUM}" ; [[ "$1" != *[!0-9]* ]] ||
-            argerr "'$1'${2:+ in $2} is not an integer." ; }
+integer() { [[ "$1" ]] || missing "$2" "${3-NUM}"; [[ "$1" != *[!0-9]* ]] ||
+            argerr "'$1'${2:+ in $2} is not an integer."; }
+numeric() { [[ "$1" ]] || missing "$2" "${3-NUM}"; re='^[0-9]+([.][0-9]+)?$';
+            [[ "$1" =~ $re ]] || argerr "'$1'${2:+ in $2} is not a number."; }
+
 
 usage() {
 	cat <<- USAGE
@@ -78,7 +81,8 @@ usage() {
 	  grouped together as a single <other> line, printed last by default.
 	  Setting a minimum higher than total, either count or percentage,
 	  will effectively disable printing the <total> line. For --top-*
-	  options, NUM does not include the total.
+	  options, NUM does not include the total. --*-perc options accepts
+	  non-integers such as 0.5
 
 	  --stop-after-top=NUM   stop reading after NUM top unique lines
 	  --stop-after-count=NUM stop reading after lines with count < NUM
@@ -208,9 +212,9 @@ files+=( "$@" )
 [[ "$otherlabel" ]] || missing "--label-other" "LABEL"
 
 integer "$mincount"  "--min-count"
-integer "$minperc"   "--min-perc"
+numeric "$minperc"   "--min-perc"
 integer "$top"       "--top"
-integer "$topperc"   "--top-perc"
+numeric "$topperc"   "--top-perc"
 integer "$precision" "--precision"
 integer "$stoptop"   "--stop-after-top"
 integer "$stopcount" "--stop-after-count"
