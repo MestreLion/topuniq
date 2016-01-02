@@ -262,7 +262,7 @@ $1 < stopcount {
 	if ((!top || (items < top)) && ($1 >= mincount)) {
 		count[items] = $1
 		label[items] = $0
-		sub("[ ]+" $1 " ", "", label[items])  # label = $2 onwards
+		sub("[ ]*" $1 " ", "", label[items])  # label = $2 onwards
 		items++
 	}
 	else {
