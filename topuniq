@@ -19,7 +19,7 @@
 #
 # Think of it as a sort | uniq -c | sort -nr on steroids ;)
 
-#Defauls:
+#Defaults:
 mincount=0
 minperc=0
 top=0
@@ -118,7 +118,7 @@ usage() {
 	  $myname uses sort and uniq, so the user locale, particularly
 	  LC_COLLATE, affects ordering and unique matching, as well as sort
 	  performance. LC_NUMERIC affects decimal separator when printing
-	  percentages. Use LC_ALL=C for fastest (but locale-independent)
+	  percentages. Use LC_ALL=C for the fastest and locale-independent
 	  results.
 
 
@@ -259,10 +259,10 @@ $1 < stopcount {
 	lines["total"]++
 
 	# Filter on counter. Not needed here, but it keeps arrays small
-	if ((!top || (items < top)) && ($1 >= mincount))  {
+	if ((!top || (items < top)) && ($1 >= mincount)) {
 		count[items] = $1
 		label[items] = $0
-		sub("[ ]+" $1 " ", "", label[items]) # label = $2 onwards
+		sub("[ ]+" $1 " ", "", label[items])  # label = $2 onwards
 		items++
 	}
 	else {
@@ -282,13 +282,13 @@ END {
 
 	# SECOND PASS: calculate percentages and <other>
 
-	topitems = items * 100 / topperc # trim based on topperc
+	topitems = items * 100 / topperc  # trim based on topperc
 	for (i=0; i < topitems; i++) {
 		percent = count[i] * 100 / count["total"]
 		if (percent >= minperc)
 			percs[i] = percent
 		else {
-			topitems = i # trim again based on minperc
+			topitems = i  # trim again based on minperc
 			break
 		}
 	}
@@ -308,11 +308,11 @@ END {
 	if (showtotal) {
 		# padding taken from <total>
 		maxcount = count["total"]
-		maxpercs = percs["total"] # == 100, duh
+		maxpercs = percs["total"]  # == 100, duh
 	}
 	else {
 		if (showother && (count["other"] > count[0])) {
-			# padding taken from <oher>
+			# padding taken from <other>
 			maxcount = count["other"]
 			maxpercs = percs["other"]
 		}
@@ -325,10 +325,10 @@ END {
 
 	# percentage padding
 	ppad = length(maxpercs "")
-	if (precision > 0) ppad += precision+1 # account for decimal separator
+	if (precision > 0) ppad += precision+1  # account for decimal separator
 
 	# count padding
-	mincpad = 7 # seems to be uniq -c hardcoded min padding
+	mincpad = 7  # seems to be uniq -c hardcoded min padding
 	if (length(maxcount "") < mincpad)
 		cpad = mincpad
 	else
